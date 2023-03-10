@@ -1,0 +1,361 @@
+.wrapper {
+  background-color: #efefef;
+  padding-top: 80px;
+  padding-bottom: 95px;
+}
+
+.container {
+  max-width: 1360px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.info_wrap {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #565656;
+  margin-top: 24px;
+  margin-bottom: 34px;
+}
+
+.list {
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item {
+  padding: 5px;
+  background-color: #111111;
+  border-radius: 50%;
+}
+
+.wrap_info {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+.new_wrap {
+  margin: 0 auto;
+}
+
+.new_list {
+  width: 1320px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.new_items {
+  max-width: 415px;
+}
+
+.new_title {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #111111;
+  margin-bottom: 18px;
+}
+
+.link_inner {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #565656;
+  margin-bottom: 6px;
+}
+
+.inputs {
+  width: 324px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #565656;
+  padding: 13px 29px 13px 11px;
+  border: none;
+  border-radius: 30px;
+}
+
+.input_wrap {
+  position: relative;
+  width: 416px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+}
+
+.buttons {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 47px;
+  background: #5a5ac9;
+  border-radius: 0px 30px 30px 0px;
+  border: none;
+  color: #ffffff;
+  padding: 5px 19px 5px 20px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1342px) {
+  .new_list {
+    width: 1300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 1322px) {
+  .new_list {
+    width: 1250px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .new_list {
+    width: 1200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 1231px) {
+  .new_list {
+    width: 1150px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 1182px) {
+  .new_list {
+    width: 1100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 1155px) {
+  .new_list {
+    width: 1050px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .new_list {
+    width: 1000px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .new_item {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .info_wrap {
+    margin-bottom: 30px;
+  }
+
+  .wrapper {
+    background-color: #efefef;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 1022px) {
+  .new_list {
+    width: 950px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 977px) {
+  .new_list {
+    width: 900px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .new_list {
+    width: 850px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 884px) {
+  .new_list {
+    width: 800px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .info_wrap {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 828px) {
+  .new_list {
+    width: 750px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 777px) {
+  .new_list {
+    width: 700px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 727px) {
+  .new_list {
+    width: 600px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 634px) {
+  .new_list {
+    width: 500px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .new_item {
+    text-align: center;
+  }
+
+  .info_wrap {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .list {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 534px) {
+  .new_list {
+    width: 400px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .info_wrap {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 443px) {
+  .new_list {
+    width: 300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .info_wrap {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .new_items {
+    width: 320px;
+    text-align: center;
+  }
+
+  .inputs {
+    width: 230px;
+  }
+
+  .input_wrap {
+    width: 320px;
+  }
+
+  .forms {
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  .buttons {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 47px;
+    background: #5a5ac9;
+    border-radius: 0px 30px 30px 0px;
+    border: none;
+    color: #ffffff;
+    padding: 5px 19px 5px 20px;
+    cursor: pointer;
+  }
+}

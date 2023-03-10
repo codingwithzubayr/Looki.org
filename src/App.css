@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/poppins-v20-latin-regular.woff2") format("woff2"),
+    url("./fonts/poppins-v20-latin-regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/poppins-v20-latin-600.woff2") format("woff2"),
+    url("./fonts/poppins-v20-latin-600.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/poppins-v20-latin-700.woff2") format("woff2"),
+    url("./fonts/poppins-v20-latin-700.woff") format("woff");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-display: swap;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/raleway-v28-latin-regular.woff2") format("woff2"),
+    url("./fonts/raleway-v28-latin-regular.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/raleway-v28-latin-500.woff2") format("woff2"),
+    url("./fonts/raleway-v28-latin-500.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/raleway-v28-latin-700.woff2") format("woff2"),
+    url("./fonts/raleway-v28-latin-700.woff") format("woff");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none !important;
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Rating.css */
+
+.star {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.filled {
+  font-size: 24px;
+  color: #ffc107;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-rate {
+  display: none;
+}
+
+.rating_stars {
+  font-size: 24px;
+}
+
+.rating-message {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #565656;
+}
+
+.carousel-control-prev-icon {
+  display: inline-block !important;
+  color: black !important;
+  border-radius: 50%;
+  padding: 10px;
 }

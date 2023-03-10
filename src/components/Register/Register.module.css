@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../assets/hero-back.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.register-input {
+  background: #ffffff;
+  border: 3px solid #ced4da;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #565656;
+  padding: 10px;
+  width: 350px;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register-btn {
+  background: #5a5ac9;
+  border: 1px solid #5a5ac9;
+  padding: 15px 30.1719px 15px 31px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+}

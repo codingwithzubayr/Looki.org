@@ -1,0 +1,150 @@
+.headerMedia {
+  background: #111111;
+}
+
+.container {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-top: 5px;
+}
+
+.newtworks_img path:hover {
+  fill: red;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.networks_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.network-phone {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  margin-left: 40px;
+}
+
+.service_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.service-option {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.service-select {
+  background: #111111;
+  color: white;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 10px;
+  outline: none;
+}
+
+.service-select:hover {
+  transition: 0.2s ease-in;
+  color: #5a5ac9;
+}
+
+.service-option {
+  display: inline-block;
+  margin-right: 20px;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.service-select option {
+  display: inline-block;
+  padding: 10px;
+}
+
+.svg path:hover {
+  fill: #5a5ac9;
+  transition: 0.2s ease-in-out;
+}
+
+.network-phone:hover {
+  color: #5a5ac9;
+  transition: 0.2s ease;
+}
+
+.network-phone:hover .svg path {
+  fill: #5a5ac9;
+  transition: 0.2s ease-in-out;
+}
+
+@media (min-width: 361px) {
+  .container {
+    max-width: 1360px;
+  }
+
+  .networks_list {
+    width: 379px;
+  }
+
+  .service_list {
+    max-width: 350px;
+  }
+}
+
+@media only screen and (max-width: 742px) {
+  .network_phone {
+    display: none;
+  }
+  .networks_list {
+    width: 186px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .networks_list {
+    display: none;
+  }
+  .service_list {
+    width: 350px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .service-select {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 0px;
+    outline: none;
+  }
+  .service-option {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}

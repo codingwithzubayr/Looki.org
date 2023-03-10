@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.modal-wrapper {
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-remove {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.modal-container {
+  background: #ffffff;
+  width: 450px;
+  padding: 0 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  border: 2px solid #111111;
+  height: 300px;
+}
+
+.modal-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 72px 28px 54px 30px;
+}
+
+.modal-input {
+  width: 390px;
+  height: 56px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: capitalize;
+  color: #111111;
+  border: 1px solid #111111;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 3px;
+}
+
+.modal-select,
+.modal-option {
+  background: #f3f3f3;
+  border-radius: 5px;
+  width: 390px;
+  height: 56px;
+  padding: 0 10px;
+  margin-bottom: 16px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.edit-btn {
+  position: absolute;
+  background: #111111;
+  border: 1px solid #212529;
+  padding: 15.4px 30.95px 16.6px 31px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+  bottom: 20px;
+  right: 30px;
+}
+
+.modal-starRate {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: none;
+  z-index: -1;
+}

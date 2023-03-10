@@ -1,0 +1,133 @@
+.container {
+  max-width: 1360px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.content-wrap {
+  max-width: 527px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+  color: #111111;
+  margin-bottom: 14px;
+}
+
+.line {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background-color: #5a5ac9;
+  border: none;
+  margin-bottom: 15px;
+}
+
+.text {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #565656;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #5a5ac9;
+}
+
+.products_list {
+  max-width: 1320px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.carousel_btn1 {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  left: 0;
+}
+.carousel_btn2 {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  right: 10px;
+}
+
+.product_item {
+  max-width: 300px;
+  background: #ffffff;
+  box-shadow: 0px 0px 11.83px 1.17px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.slider_products {
+  display: flex;
+  align-items: center;
+}
+
+.product_img {
+  border-radius: 4px;
+}
+
+.product_content {
+  padding: 17px;
+}
+
+.product_subtitle {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #111111;
+  margin-bottom: 0px;
+}
+.product_cost {
+  max-width: 266px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cost {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+  color: #111111;
+}
+
+.cart {
+  background: #f6f6f6;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.product_img-cart {
+  width: 30px;
+  height: auto;
+}
+
+.rating_wrap {
+  width: 267px;
+  height: 54px;
+}

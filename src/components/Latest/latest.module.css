@@ -1,0 +1,436 @@
+.wrapper {
+  margin-top: 78px;
+}
+
+.container {
+  max-width: 1360px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.info_wrap {
+  max-width: 390px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 49px;
+}
+
+.title {
+  margin-bottom: 14px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+  text-transform: capitalize;
+  color: #111111;
+}
+
+.line {
+  background-color: #5a5ac9;
+  height: 2px;
+  border: none;
+  width: 60px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.text {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #565656;
+}
+
+.list {
+  max-width: 1320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item {
+  max-width: 302px;
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+
+.img {
+  display: block;
+  transition: transform 0.9s ease;
+  margin-bottom: 22px;
+}
+
+.img:hover {
+  transform: scale(1.1);
+}
+.subtitle {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 21px;
+  color: #5a5ac9;
+  margin-bottom: 9px;
+}
+
+.info_title {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #111111;
+  margin-bottom: 15px;
+}
+
+.info_text {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #565656;
+}
+
+.info_span {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #5a5ac9;
+  margin: 0 5px 0 5px;
+}
+
+.logo_wrap {
+  border-top: 2px solid #efefef;
+  margin-top: 64px;
+  padding: 36px 111.6px 36px 111.6px;
+}
+
+.logo_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1294px) {
+  .item {
+    max-width: 280px;
+  }
+}
+
+@media only screen and (max-width: 1194px) {
+  .item {
+    max-width: 250px;
+  }
+
+  .info_text {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 22px;
+    color: #565656;
+  }
+
+  .info_title {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@media only screen and (max-width: 1074px) {
+  .item {
+    max-width: 230px;
+  }
+
+  .logo_wrap {
+    border-top: 2px solid #efefef;
+    margin-top: 64px;
+    padding: 20px 0;
+  }
+
+  .logo_item {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 1003px) {
+  .item {
+    max-width: 210px;
+  }
+
+  .logo_wrap {
+    border-top: 2px solid #efefef;
+    margin-top: 64px;
+    padding: 20px 0;
+  }
+}
+
+@media only screen and (max-width: 933px) {
+  .item {
+    max-width: 350px;
+    margin-left: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  .item:first-child {
+    margin-left: 0;
+  }
+
+  .item:nth-child(3) {
+    margin-left: 0;
+  }
+
+  .list {
+    max-width: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .logo_wrap {
+    border-top: 2px solid #efefef;
+    margin-top: 0px;
+    padding: 20px 0;
+  }
+}
+
+@media only screen and (max-width: 796px) {
+  .item {
+    max-width: 330px;
+    margin-left: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .list {
+    max-width: 710px;
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 796px) {
+  .item {
+    max-width: 300px;
+    margin-left: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .list {
+    max-width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 691px) {
+  .item {
+    max-width: 270px;
+    margin-left: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .list {
+    max-width: 590px;
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .text {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    color: #565656;
+  }
+
+  .title {
+    margin-bottom: 14px;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 34px;
+    text-transform: capitalize;
+    color: #111111;
+  }
+
+  .logo_item {
+    width: 210px;
+    margin-bottom: 20px;
+  }
+
+  .logo_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .logo_item {
+    width: 160px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .logo_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .logo_wrap {
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 636px) {
+  .item {
+    max-width: 250px;
+    margin-left: 30px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .list {
+    max-width: 530px;
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 572px) {
+  .item {
+    max-width: 220px;
+    margin-left: 30px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .list {
+    max-width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .text {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 21px;
+    color: #565656;
+  }
+
+  .title {
+    margin-bottom: 8px;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: #111111;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .logo_item {
+    margin-top: 20px;
+    width: 122px;
+    margin-bottom: 20px;
+  }
+
+  .logo_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .logo_wrap {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 511px) {
+  .item {
+    max-width: 200px;
+    margin-left: 30px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .list {
+    max-width: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 471px) {
+  .item {
+    max-width: 350px;
+    margin-left: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .item:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .item:nth-child(4) {
+    margin-left: 0;
+  }
+
+  .list {
+    max-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: unset;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
