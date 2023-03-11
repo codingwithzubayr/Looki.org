@@ -17,6 +17,7 @@ export function AddToCart({ item }) {
 
   const handleIncreaseCount = (itemId) => {
     dispatch(increaseCount(itemId));
+    console.log(items);
   };
 
   const handleDelete = (itemId) => {
@@ -91,7 +92,9 @@ export function AddToCart({ item }) {
                       </div>
                     </div>
 
-                    <p className={addToCartStyle["cost"]}>${item.cost}</p>
+                    <p className={addToCartStyle["cost"]}>
+                      ${Number(item.price ? item.price : item.cost)}
+                    </p>
                     <button
                       onClick={() => handleDelete(item.id)}
                       className={addToCartStyle["btn"]}

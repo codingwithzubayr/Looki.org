@@ -17,10 +17,13 @@ const cartSlice = createSlice({
     increaseCount: (state, action) => {
       const item = state.items.find((item) => item.id === action.payload);
       if (item) {
-        if (typeof item.counter === "number") {
+        if (typeof item.counter === "number" && typeof item.cost === "number") {
           item.counter += 1;
+          item.cost = item.cost + item.cost;
         } else {
           item.counter = 2;
+          item.cost = Number(item.cost);
+          item.cost = item.cost + item.cost;
         }
         localStorage.setItem("CartItem", JSON.stringify(state.items));
       }
@@ -29,6 +32,8 @@ const cartSlice = createSlice({
       const item = state.items.find((item) => item.id === action.payload);
       if (item.counter > 1) {
         item.counter -= 1;
+        item.cost = item.cost - item.cost;
+
         localStorage.setItem("CartItem", JSON.stringify(state.items));
       }
     },

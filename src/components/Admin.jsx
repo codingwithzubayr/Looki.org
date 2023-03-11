@@ -3,9 +3,11 @@ import Header from "./header/Header";
 import { useNavigate } from "react-router-dom";
 import adminStyle from "./Admin.module.css";
 import Modal from "./Modal/Modal";
+import { useSpring, animated } from "react-spring";
 import axios from "axios";
 import Loading from "./Loading/Loading";
 import OurProduct from "../assets/ourProducts1.jpg";
+import Product from "./Product/Product";
 import Servicess from "../components/Servicess/Services";
 import Footer from "../components/Footer/Footer";
 function Admin() {
@@ -22,6 +24,11 @@ function Admin() {
       navigate("/admin");
     }
   }, []);
+
+  const fade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: showModal ? 1 : 0 },
+  });
 
   useEffect(() => {
     const getProducts = async () => {
@@ -115,7 +122,21 @@ function Admin() {
             </ul>
           </div>
         </div>
-        {showModal && <Modal onsetShowModal={setShowModal} />}
+        {showModal && (
+          <animated.div
+            style={{
+              ...fade,
+              background: "white",
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              padding: "20px",
+            }}
+          >
+            <Modal onsetShowModal={setShowModal} />
+          </animated.div>
+        )}
       </div>
       <Servicess />
       <Footer />
