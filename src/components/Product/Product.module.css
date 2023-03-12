@@ -11,6 +11,10 @@
   margin-bottom: 50px;
 }
 
+.wrapper {
+  height: 721px;
+}
+
 .title {
   font-family: "Raleway", sans-serif;
   font-style: normal;

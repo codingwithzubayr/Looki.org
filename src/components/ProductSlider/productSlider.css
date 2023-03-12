@@ -582,13 +582,14 @@
     background: #ffffff;
   }
 
-  .product_img {
-    max-width: 490px;
-    width: 100%;
-  }
   .product_img-cart {
     width: 40px;
     height: auto;
+  }
+
+  .product_img {
+    max-width: 490px;
+    width: 100%;
   }
 
   .cart {

@@ -1,8 +1,9 @@
 import productStyle from "../Product/Product.module.css";
-import React from "react";
+import React, { useState } from "react";
 import ProductSlider from "../ProductSlider/ProductSlider";
 import { LanguageContext } from "../LanguageContext/Language";
 import { useContext } from "react";
+import Loading from "../Loading/Loading";
 
 function Product(props) {
   const { language, setLanguage } = useContext(LanguageContext);
@@ -26,8 +27,8 @@ function Product(props) {
             </h2>
           </div>
           <div className={productStyle["products_wrap"]}>
-            <ul>
-              <ProductSlider />
+            <ul className={productStyle["product_list"]}>
+              {<ProductSlider /> ? <ProductSlider /> : <Loading />}
             </ul>
           </div>
         </div>
