@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import product1 from "../../assets/ourProducts1.jpg";
 import Rating from "../Rating/Rating";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../store";
@@ -9,25 +8,36 @@ import "../ProductSlider/productSlider.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { listAll, ref, getDownloadURL } from "firebase/storage";
+import { storage } from "../../firebase";
+import product1 from "../../assets/productImage8.png";
 
 const ProductSlider = () => {
-  const [product, setProduct] = useState([]);
+  const [newproduct, setNewProduct] = useState([]);
   const dispatch = useDispatch();
+
+  const imageListRef = ref(storage, "images/");
 
   useEffect(() => {
     const getProducts = async () => {
       try {
+        const imageUrls = await Promise.all(
+          (
+            await listAll(imageListRef)
+          ).items.map((item) => getDownloadURL(item))
+        );
         const response = await axios.get(
           "https://lookirealtime-default-rtdb.firebaseio.com/data.json"
         );
         const data = response.data;
-        const newData = Object.keys(response.data).map((item) => {
+        const newData = Object.keys(response.data).map((item, index) => {
           return {
             ...data[item],
             id: item,
+            imageLists: imageUrls[index],
           };
         });
-        setProduct(newData);
+        setNewProduct(newData);
       } catch (error) {
         console.error(error);
       }
@@ -73,12 +83,12 @@ const ProductSlider = () => {
   return (
     <div className="container py-4 px-4 justify-content-center">
       <Slider {...settings}>
-        {product.map((item) => (
+        {newproduct.map((item) => (
           <li className="product_item" key={item.id}>
             <div className="img_Slider_wrapper">
               <img
                 className="product_img"
-                src={product1}
+                src={item.imageLists ? item.imageLists : product1}
                 alt="Make up beauty"
               />
             </div>

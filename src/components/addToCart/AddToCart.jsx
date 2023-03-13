@@ -1,15 +1,10 @@
 import addToCartStyle from "../addToCart/addToCart.module.css";
-import OurProduct from "../../assets/ourProducts1.jpg";
-import Header from "../header/Header";
 import Increase from "../../assets/incrase.svg";
 import Decriase from "../../assets/decrease.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { increaseCount, decreaseCount, deleteCartItem } from "../../store";
-import Servicess from "../Servicess/Services";
-import Footer from "../Footer/Footer";
-import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import product1 from "../../assets/productImage8.png";
 
 export function AddToCart({ item }) {
   const dispatch = useDispatch();
@@ -30,18 +25,19 @@ export function AddToCart({ item }) {
 
   return (
     <div className={addToCartStyle["cart_wrap"]}>
-      <Header />
       <div className={addToCartStyle["wrap"]}>
         <div className={addToCartStyle["hero"]}>
-          <h1 className={addToCartStyle["title"]}>Cart</h1>
-          <hr className={addToCartStyle["line"]} />
-          <div className={addToCartStyle["link_wrap"]}>
-            <Link className={addToCartStyle["home"]} to="/">
-              Home <span className={addToCartStyle["home_span"]}>></span>
-            </Link>
-            <Link className={addToCartStyle["cart"]} to="/AddToCart">
-              Cart
-            </Link>
+          <div className={addToCartStyle["hero_wrap"]}>
+            <h1 className={addToCartStyle["title"]}>Cart</h1>
+            <hr className={addToCartStyle["line"]} />
+            <div className={addToCartStyle["link_wrap"]}>
+              <Link className={addToCartStyle["home"]} to="/">
+                Home <span className={addToCartStyle["home_span"]}>></span>
+              </Link>
+              <Link className={addToCartStyle["cart"]} to="/AddToCart">
+                Cart
+              </Link>
+            </div>
           </div>
         </div>
         <div className={addToCartStyle["container"]}>
@@ -62,7 +58,7 @@ export function AddToCart({ item }) {
                     <div className={addToCartStyle["img_warp"]}>
                       <img
                         className={addToCartStyle["img"]}
-                        src={OurProduct}
+                        src={product1}
                         alt=""
                       />
                     </div>
@@ -108,8 +104,6 @@ export function AddToCart({ item }) {
           </div>
         </div>
       </div>
-      <Servicess />
-      <Footer />
     </div>
   );
 }

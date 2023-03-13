@@ -20,6 +20,7 @@ function RealHeader() {
   const [counter, setCounter] = useState(0);
   const { items, total } = useSelector((state) => state.cart);
   const { language, setLanguage } = useContext(LanguageContext);
+  const [isHomePage, setIsHomePage] = useState(true);
 
   const navigate = useNavigate();
 
@@ -28,12 +29,12 @@ function RealHeader() {
     if (!isLoggedIn) {
       navigate("/checkLogin");
     } else {
-      navigate("/admin");
+      setIsHomePage(!isHomePage);
     }
   };
 
   const handleScroll = () => {
-    if (window.pageYOffset > 30) {
+    if (window.pageYOffset > 40) {
       setTop(0);
       setBackground("lightgray");
     } else {
@@ -477,13 +478,13 @@ function RealHeader() {
               </button>
             </li>
             <li className={RealHeaderStyle["addToCard-item"]}>
-              <button
+              <Link
                 onClick={goToAdminPage}
                 className={RealHeaderStyle["admin-btn"]}
+                to={"/admin"}
               >
-                {language === "en" && "ADMIN"}
-                {language === "uz" && "ADMIN"}
-              </button>
+                Admin
+              </Link>
             </li>
             <li className={RealHeaderStyle["menu_burger_item"]}>
               <div className={RealHeaderStyle["button_app"]}>

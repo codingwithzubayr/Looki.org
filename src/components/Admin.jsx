@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Header from "./header/Header";
 import { useNavigate, Link } from "react-router-dom";
 import adminStyle from "./Admin.module.css";
 import Modal from "./Modal/Modal";
 import { useSpring, animated } from "react-spring";
 import axios from "axios";
 import Loading from "./Loading/Loading";
-import Servicess from "../components/Servicess/Services";
-import Footer from "../components/Footer/Footer";
-import { listAll, ref, getDownloadURL } from "firebase/storage";
+import { listAll, ref, getDownloadURL, deleteObject } from "firebase/storage";
 import { storage } from "../firebase";
+import product1 from "../assets/productImage8.png";
 
 function Admin() {
   const [newproduct, setNewProduct] = useState([]);
@@ -65,6 +63,15 @@ function Admin() {
     const productToDelete = newproduct.find((item) => item.id === id);
     const imageToDelete = productToDelete.imageLists;
 
+    const storageRef = ref(storage, imageToDelete);
+    deleteObject(storageRef)
+      .then(() => {
+        console.log("deleted");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     axios
       .delete(
         `https://lookirealtime-default-rtdb.firebaseio.com/data/${id}.json`
@@ -86,18 +93,19 @@ function Admin() {
 
   return (
     <div>
-      <Header />
       <div className={adminStyle["wrap"]}>
         <div className={adminStyle["hero"]}>
-          <h1 className={adminStyle["title"]}>Admin</h1>
-          <hr className={adminStyle["line"]} />
-          <div className={adminStyle["link_wrap"]}>
-            <Link className={adminStyle["home"]} to="/">
-              Home <span className={adminStyle["home_span"]}>></span>
-            </Link>
-            <Link className={adminStyle["admin"]} href="/admin">
-              Admin
-            </Link>
+          <div className={adminStyle["hero_wrap"]}>
+            <h1 className={adminStyle["title"]}>Admin</h1>
+            <hr className={adminStyle["line"]} />
+            <div className={adminStyle["link_wrap"]}>
+              <Link className={adminStyle["home"]} to="/">
+                Home <span className={adminStyle["home_span"]}>></span>
+              </Link>
+              <Link className={adminStyle["admin"]} href="/admin">
+                Admin
+              </Link>
+            </div>
           </div>
         </div>
         <div className={adminStyle["container"]}>
@@ -119,7 +127,7 @@ function Admin() {
                     <div className={adminStyle["img_warp"]}>
                       <img
                         className={adminStyle["img"]}
-                        src={item.imageLists}
+                        src={item.imageLists ? item.imageList : product1}
                         alt=""
                       />
                     </div>
@@ -156,8 +164,6 @@ function Admin() {
           </animated.div>
         )}
       </div>
-      <Servicess />
-      <Footer />
     </div>
   );
 }

@@ -68,6 +68,7 @@ function Modal(props) {
             placeholder="Cost: $"
           />
           <input
+            className={modalStyle["input_file"]}
             type="file"
             onChange={(event) => {
               setImageUpload(event.target.files[0]);
