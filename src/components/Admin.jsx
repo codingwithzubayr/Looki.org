@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Header from "./header/Header";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import adminStyle from "./Admin.module.css";
 import Modal from "./Modal/Modal";
 import { useSpring, animated } from "react-spring";
 import axios from "axios";
 import Loading from "./Loading/Loading";
-import OurProduct from "../assets/ourProducts1.jpg";
-import Product from "./Product/Product";
 import Servicess from "../components/Servicess/Services";
 import Footer from "../components/Footer/Footer";
+import { listAll, ref, getDownloadURL } from "firebase/storage";
+import { storage } from "../firebase";
+
 function Admin() {
   const [newproduct, setNewProduct] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [sendData, setSendData] = useState([]);
+  const [imageList, setImageList] = useState([]);
 
   const navigate = useNavigate();
+
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("token");
     if (!isLoggedIn) {
@@ -23,24 +25,32 @@ function Admin() {
     } else {
       navigate("/admin");
     }
-  }, []);
+  }, [navigate]);
 
   const fade = useSpring({
     from: { opacity: 0 },
     to: { opacity: showModal ? 1 : 0 },
   });
 
+  const imageListRef = ref(storage, "images/");
+
   useEffect(() => {
     const getProducts = async () => {
       try {
+        const imageUrls = await Promise.all(
+          (
+            await listAll(imageListRef)
+          ).items.map((item) => getDownloadURL(item))
+        );
         const response = await axios.get(
           "https://lookirealtime-default-rtdb.firebaseio.com/data.json"
         );
         const data = response.data;
-        const newData = Object.keys(response.data).map((item) => {
+        const newData = Object.keys(response.data).map((item, index) => {
           return {
             ...data[item],
             id: item,
+            imageLists: imageUrls[index],
           };
         });
         setNewProduct(newData);
@@ -52,12 +62,18 @@ function Admin() {
   }, []);
 
   const deleteDataFromFirebase = (id) => {
+    const productToDelete = newproduct.find((item) => item.id === id);
+    const imageToDelete = productToDelete.imageLists;
+
     axios
       .delete(
         `https://lookirealtime-default-rtdb.firebaseio.com/data/${id}.json`
       )
       .then((response) => {
-        window.location.reload(false);
+        const filteredProducts = newproduct.filter((item) => item.id !== id);
+        setNewProduct(filteredProducts);
+        const filteredImages = imageList.filter((url) => url !== imageToDelete);
+        setImageList(filteredImages);
       })
       .catch((error) => {
         console.log(error);
@@ -76,12 +92,12 @@ function Admin() {
           <h1 className={adminStyle["title"]}>Admin</h1>
           <hr className={adminStyle["line"]} />
           <div className={adminStyle["link_wrap"]}>
-            <a className={adminStyle["home"]} href="/">
-              Home
-            </a>
-            <a className={adminStyle["home"]} href="/admin">
+            <Link className={adminStyle["home"]} to="/">
+              Home <span className={adminStyle["home_span"]}>></span>
+            </Link>
+            <Link className={adminStyle["admin"]} href="/admin">
               Admin
-            </a>
+            </Link>
           </div>
         </div>
         <div className={adminStyle["container"]}>
@@ -103,11 +119,10 @@ function Admin() {
                     <div className={adminStyle["img_warp"]}>
                       <img
                         className={adminStyle["img"]}
-                        src={OurProduct}
+                        src={item.imageLists}
                         alt=""
                       />
                     </div>
-
                     <h2 className={adminStyle["subtitle"]}>{item.Title}</h2>
                     <p className={adminStyle["cost"]}>${item.cost}</p>
                     <button
@@ -134,7 +149,10 @@ function Admin() {
               padding: "20px",
             }}
           >
-            <Modal onsetShowModal={setShowModal} />
+            <Modal
+              onsetShowModal={setShowModal}
+              onsetImageList={setImageList}
+            />
           </animated.div>
         )}
       </div>

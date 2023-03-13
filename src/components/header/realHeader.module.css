@@ -133,8 +133,8 @@
   font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 16px;
   color: #ffffff;
 }
 
@@ -205,6 +205,14 @@
   left: -440px;
 }
 
+@keyframes slide-down {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 .inner_title {
   font-family: "Poppins";
   font-style: normal;
@@ -378,15 +386,6 @@
   font-size: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
-}
-
-@keyframes slide-down {
-  from {
-    transform: scaleY(0);
-  }
-  to {
-    transform: scaleY(1);
-  }
 }
 
 @media only screen and (max-width: 1405px) {

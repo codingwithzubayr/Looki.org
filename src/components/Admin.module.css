@@ -38,10 +38,29 @@
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 14px;
   text-transform: capitalize;
   color: #111111;
+  margin-left: 5px;
+}
+
+.home:hover {
+  color: #5a5ac9;
+}
+
+.home_span {
+  margin-left: 10px;
+}
+
+.admin {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 14px;
+  text-transform: capitalize;
+  color: #5a5ac9;
   margin-left: 10px;
 }
 
@@ -121,4 +140,47 @@
 
 .img {
   width: 170px;
+}
+
+.link_wrap {
+  animation: fadeInFromRight 0.7s ease-in-out;
+}
+
+.title {
+  animation: fadeInFromLeft 0.7s ease-in-out;
+}
+.line {
+  animation: fadeInFromTop 0.7s ease-in-out;
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

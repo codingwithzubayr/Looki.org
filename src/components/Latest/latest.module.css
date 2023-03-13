@@ -110,13 +110,15 @@
 .logo_wrap {
   border-top: 2px solid #efefef;
   margin-top: 64px;
-  padding: 36px 111.6px 36px 111.6px;
+  padding: 36px 0px 36px 0px;
+  overflow: hidden;
 }
 
 .logo_list {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  animation: move 10s linear infinite;
 }
 
 @media only screen and (max-width: 1294px) {
@@ -149,27 +151,11 @@
   .item {
     max-width: 230px;
   }
-
-  .logo_wrap {
-    border-top: 2px solid #efefef;
-    margin-top: 64px;
-    padding: 20px 0;
-  }
-
-  .logo_item {
-    margin-top: 20px;
-  }
 }
 
 @media only screen and (max-width: 1003px) {
   .item {
     max-width: 210px;
-  }
-
-  .logo_wrap {
-    border-top: 2px solid #efefef;
-    margin-top: 64px;
-    padding: 20px 0;
   }
 }
 
@@ -200,12 +186,6 @@
     justify-content: unset;
     flex-wrap: wrap;
     margin: 0 auto;
-  }
-
-  .logo_wrap {
-    border-top: 2px solid #efefef;
-    margin-top: 0px;
-    padding: 20px 0;
   }
 }
 
@@ -281,38 +261,6 @@
     text-transform: capitalize;
     color: #111111;
   }
-
-  .logo_item {
-    width: 210px;
-    margin-bottom: 20px;
-  }
-
-  .logo_list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 670px) {
-  .logo_item {
-    width: 160px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-
-  .logo_list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  .logo_wrap {
-    margin-top: 0px;
-  }
 }
 
 @media only screen and (max-width: 636px) {
@@ -368,26 +316,6 @@
     line-height: 30px;
     text-transform: capitalize;
     color: #111111;
-  }
-}
-
-@media only screen and (max-width: 520px) {
-  .logo_item {
-    margin-top: 20px;
-    width: 122px;
-    margin-bottom: 20px;
-  }
-
-  .logo_list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  .logo_wrap {
-    margin-top: 20px;
   }
 }
 

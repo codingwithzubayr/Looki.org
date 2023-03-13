@@ -29,7 +29,7 @@ export function AddToCart({ item }) {
   };
 
   return (
-    <div>
+    <div className={addToCartStyle["cart_wrap"]}>
       <Header />
       <div className={addToCartStyle["wrap"]}>
         <div className={addToCartStyle["hero"]}>
@@ -37,11 +37,11 @@ export function AddToCart({ item }) {
           <hr className={addToCartStyle["line"]} />
           <div className={addToCartStyle["link_wrap"]}>
             <Link className={addToCartStyle["home"]} to="/">
-              Home
+              Home <span className={addToCartStyle["home_span"]}>></span>
             </Link>
-            <a className={addToCartStyle["home"]} href="/cart">
+            <Link className={addToCartStyle["cart"]} to="/AddToCart">
               Cart
-            </a>
+            </Link>
           </div>
         </div>
         <div className={addToCartStyle["container"]}>

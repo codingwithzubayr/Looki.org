@@ -1,5 +1,21 @@
 .wrap {
   margin-top: 70px;
+  transform: translateY(-50px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cart {
+  animation: slide-out 0.3s forwards;
+  transition: 0.3s ease;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
 
 .container {
@@ -38,10 +54,28 @@
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 14px;
   text-transform: capitalize;
   color: #111111;
+  margin-left: 5px;
+}
+
+.home:hover {
+  color: #5a5ac9;
+}
+.cart {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 14px;
+  text-transform: capitalize;
+  color: #5a5ac9;
+  margin-left: 10px;
+}
+
+.home_span {
   margin-left: 10px;
 }
 
@@ -182,6 +216,49 @@
   border: 2px solid #ebebeb;
   background: transparent;
   border-left: none;
+}
+
+.link_wrap {
+  animation: fadeInFromRight 0.7s ease-in-out;
+}
+
+.title {
+  animation: fadeInFromLeft 0.7s ease-in-out;
+}
+.line {
+  animation: fadeInFromTop 0.7s ease-in-out;
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media only screen and (max-width: 1378px) {

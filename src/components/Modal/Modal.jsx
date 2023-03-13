@@ -1,21 +1,32 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import modalStyle from "../Modal/Modal.module.css";
 import axios from "axios";
 import close from "../../assets/close.svg";
-import Rating from "../Rating/Rating";
-function Modal(props, { rating, onRatingChange }) {
-  const [newProduct, setNewProduct] = useState([]);
+import { storage } from "../../firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
+
+function Modal(props) {
+  const [imageUpload, setImageUpload] = useState(null);
   const Title = useRef();
   const cost = useRef();
-  const rate = useRef(null);
+  const [productList, setProductList] = useState([]);
 
   const removeModal = (e) => {
     props.onsetShowModal(false);
   };
 
   const sentDataToServer = async (e) => {
+    e.preventDefault();
     props.onsetShowModal(false);
     try {
+      if (imageUpload == null) return;
+      const imageRef = ref(storage, `images/${imageUpload.name}`);
+      uploadBytes(imageRef, imageUpload).then((snaphsot) => {
+        getDownloadURL(snaphsot.ref).then((url) => {
+          props.onsetImageList((prev) => [...prev, url]);
+        });
+      });
       const data = {
         Title: Title.current.value,
         cost: cost.current.value,
@@ -24,11 +35,11 @@ function Modal(props, { rating, onRatingChange }) {
         "https://lookirealtime-default-rtdb.firebaseio.com/data.json",
         data
       );
-      console.log(response);
+      const newProduct = { ...data, imageUrl: imageRef.fullPath };
+      setProductList([...productList, newProduct]);
     } catch (error) {
       console.error(error);
     }
-    window.location.reload(false);
   };
 
   return (
@@ -56,7 +67,12 @@ function Modal(props, { rating, onRatingChange }) {
             name="Cost"
             placeholder="Cost: $"
           />
-
+          <input
+            type="file"
+            onChange={(event) => {
+              setImageUpload(event.target.files[0]);
+            }}
+          />
           <button
             onSubmit={sentDataToServer}
             className={modalStyle["edit-btn"]}
