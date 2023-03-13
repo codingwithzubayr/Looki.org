@@ -10,6 +10,7 @@
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
+  z-index: 1000 !important;
 }
 
 @-webkit-keyframes animatetop {
@@ -50,7 +51,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 10px;
+  border-radius: 1px;
   border: 2px solid #111111;
   height: auto;
 }
@@ -59,7 +60,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 72px 28px 54px 30px;
+  padding: 60px 28px 60px 30px;
 }
 
 .modal-input {
@@ -115,7 +116,6 @@
   opacity: 0;
   pointer-events: none;
   visibility: none;
-  z-index: -1;
 }
 
 input[type="file"] {
@@ -140,4 +140,58 @@ input[type="file"]:hover {
   color: #ffffff;
   transition: 0.3s ease-in-out;
   border: 1px solid #5a5ac9;
+}
+
+@media only screen and (max-width: 552px) {
+  .modal-container {
+    width: 350px;
+  }
+
+  .modal-input {
+    width: 320px;
+  }
+
+  input[type="file"] {
+    width: 320px;
+  }
+
+  .edit-btn {
+    bottom: 10px;
+    right: 13px;
+  }
+
+  .modal-remove {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 3px;
+    top: 20px;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .modal-container {
+    width: 330px;
+  }
+
+  .modal-input {
+    width: 300px;
+  }
+
+  input[type="file"] {
+    width: 300px;
+  }
+
+  .edit-btn {
+    bottom: 10px;
+    right: 13px;
+  }
+
+  .modal-remove {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 3px;
+    top: 20px;
+  }
 }

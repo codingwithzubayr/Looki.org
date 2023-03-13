@@ -12,9 +12,10 @@ function LoginForm(props) {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     axios
-      .get("https://register-b60d4-default-rtdb.firebaseio.com/register.json")
+      .get("https://newdata-8480e-default-rtdb.firebaseio.com/register.json")
       .then(({ data }) => {
         const newData = Object.keys(data).map((item) => {
           return {
@@ -42,10 +43,6 @@ function LoginForm(props) {
         );
         setIsLoading(false);
       });
-  }, [oldusername, oldpassword]);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
   };
 
   return (

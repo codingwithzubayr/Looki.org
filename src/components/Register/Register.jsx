@@ -22,7 +22,7 @@ const RegisterPage = () => {
         alert("Please fill out all inputs!!!");
       } else {
         const response = await axios.post(
-          "https://register-b60d4-default-rtdb.firebaseio.com/register.json",
+          "https://newdata-8480e-default-rtdb.firebaseio.com/register.json",
           {
             username,
             email,
