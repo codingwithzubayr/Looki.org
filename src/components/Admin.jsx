@@ -14,17 +14,6 @@ function Admin() {
   const [showModal, setShowModal] = useState(false);
   const [imageList, setImageList] = useState([]);
 
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("token");
-    if (!isLoggedIn) {
-      navigate("/checkLogin");
-    } else {
-      navigate("/admin");
-    }
-  }, [navigate]);
-
   const fade = useSpring({
     from: { opacity: 0 },
     to: { opacity: showModal ? 1 : 0 },
@@ -38,13 +27,14 @@ function Admin() {
         const imageUrls = await Promise.all(
           (
             await listAll(imageListRef)
-          ).items.map((item) => getDownloadURL(item))
+          ).items.map(async (item) => await getDownloadURL(item))
         );
         const response = await axios.get(
           "https://lookirealtime-default-rtdb.firebaseio.com/data.json"
         );
         const data = response.data;
-        const newData = Object.keys(response.data).map((item, index) => {
+        const newData = Object.keys(data).map((item, index) => {
+
           return {
             ...data[item],
             id: item,
@@ -127,11 +117,11 @@ function Admin() {
                     <div className={adminStyle["img_warp"]}>
                       <img
                         className={adminStyle["img"]}
-                        src={item.imageLists ? item.imageList : product1}
+                        src={item.imageLists ? item.imageLists : product1}
                         alt=""
                       />
                     </div>
-                    <h2 className={adminStyle["subtitle"]}>{item.Title}</h2>
+                    <h2 className={adminStyle["subtitle"]}>{item.title}</h2>
                     <p className={adminStyle["cost"]}>${item.cost}</p>
                     <button
                       onClick={() => deleteDataFromFirebase(item.id)}
@@ -167,4 +157,5 @@ function Admin() {
     </div>
   );
 }
+
 export default Admin;

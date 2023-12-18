@@ -93,7 +93,7 @@ const ProductSlider = () => {
               />
             </div>
             <div className="product_content">
-              <h2 className="product_subtitle">{item.Title}</h2>
+              <h2 className="product_subtitle">{item.title}</h2>
               <div className="rating_wrap">
                 <Rating />
               </div>

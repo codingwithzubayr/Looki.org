@@ -12,7 +12,6 @@ export function AddToCart({ item }) {
 
   const handleIncreaseCount = (itemId) => {
     dispatch(increaseCount(itemId));
-    console.log(items);
   };
 
   const handleDelete = (itemId) => {
@@ -58,11 +57,11 @@ export function AddToCart({ item }) {
                     <div className={addToCartStyle["img_warp"]}>
                       <img
                         className={addToCartStyle["img"]}
-                        src={product1}
+                        src={item.imageLists ? item.imageLists : product1}
                         alt=""
                       />
                     </div>
-                    <h2 className={addToCartStyle["subtitle"]}>{item.Title}</h2>
+                    <h2 className={addToCartStyle["subtitle"]}>{item.title}</h2>
                     <div className={addToCartStyle["stock"]}>
                       <p className={addToCartStyle["stock_text"]}>In Stock</p>
                     </div>

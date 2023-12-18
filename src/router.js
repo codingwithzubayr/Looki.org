@@ -1,8 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
-import Login from "./components/Login/Login";
-import CheckLogin from "./components/Check/CheckLogin";
-import RegisterPage from "./components/Register/Register";
 import Admin from "./components/Admin";
 import { AddToCart } from "./components/addToCart/AddToCart";
 import Header from "./components/header/Header";
@@ -40,39 +37,6 @@ export const routes = createBrowserRouter([
       <>
         <Header />
         <Admin />
-        <Services />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: "/checkLogin",
-    element: (
-      <>
-        <Header />
-        <CheckLogin />
-        <Services />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: "/register",
-    element: (
-      <>
-        <Header />
-        <RegisterPage />
-        <Services />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: "/login",
-    element: (
-      <>
-        <Header />
-        <Login />
         <Services />
         <Footer />
       </>

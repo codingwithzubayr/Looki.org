@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import modalStyle from "../Modal/Modal.module.css";
 import axios from "axios";
 import close from "../../assets/close.svg";
@@ -7,10 +7,11 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 } from "uuid";
 
 function Modal(props) {
+  const [title, setTitle] = useState("");
+  const [cost, setCost] = useState("");
   const [imageUpload, setImageUpload] = useState(null);
-  const Title = useRef();
-  const cost = useRef();
   const [productList, setProductList] = useState([]);
+  const oldCost = 0;
 
   const removeModal = (e) => {
     props.onsetShowModal(false);
@@ -21,22 +22,29 @@ function Modal(props) {
     props.onsetShowModal(false);
     try {
       if (imageUpload == null) return;
+
       const imageRef = ref(storage, `images/${imageUpload.name}`);
-      uploadBytes(imageRef, imageUpload).then((snaphsot) => {
-        getDownloadURL(snaphsot.ref).then((url) => {
-          props.onsetImageList((prev) => [...prev, url]);
-        });
-      });
+      const snapshot = await uploadBytes(imageRef, imageUpload);
+      const url = await getDownloadURL(snapshot.ref);
+
       const data = {
-        Title: Title.current.value,
-        cost: cost.current.value,
+        title: title,
+        cost: cost,
+        imageUrl: url,
+        oldCost: cost,
       };
+
+      // Make a direct Axios POST request to save data
       const response = await axios.post(
         "https://lookirealtime-default-rtdb.firebaseio.com/data.json",
         data
       );
-      const newProduct = { ...data, imageUrl: imageRef.fullPath };
-      setProductList([...productList, newProduct]);
+
+      // Handle success if needed
+      console.log("Data saved successfully:", response.data);
+
+      // Update the local product list
+      setProductList([...productList, data]);
     } catch (error) {
       console.error(error);
     }
@@ -53,15 +61,17 @@ function Modal(props) {
         </button>
         <form onSubmit={sentDataToServer} className={modalStyle["modal-form"]}>
           <input
-            ref={Title}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             className={modalStyle["modal-input"]}
             type="text"
-            name="Title"
+            name="title"
             placeholder="Title"
           />
 
           <input
-            ref={cost}
+            value={cost}
+            onChange={(e) => setCost(e.target.value)}
             className={modalStyle["modal-input"]}
             type="number"
             name="Cost"

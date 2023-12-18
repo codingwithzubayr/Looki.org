@@ -24,15 +24,6 @@ function RealHeader() {
 
   const navigate = useNavigate();
 
-  const goToAdminPage = (e) => {
-    const isLoggedIn = localStorage.getItem("token");
-    if (!isLoggedIn) {
-      navigate("/checkLogin");
-    } else {
-      setIsHomePage(!isHomePage);
-    }
-  };
-
   const handleScroll = () => {
     if (window.pageYOffset > 40) {
       setTop(0);
@@ -478,11 +469,7 @@ function RealHeader() {
               </button>
             </li>
             <li className={RealHeaderStyle["addToCard-item"]}>
-              <Link
-                onClick={goToAdminPage}
-                className={RealHeaderStyle["admin-btn"]}
-                to={"/admin"}
-              >
+              <Link className={RealHeaderStyle["admin-btn"]} to={"/admin"}>
                 Admin
               </Link>
             </li>
